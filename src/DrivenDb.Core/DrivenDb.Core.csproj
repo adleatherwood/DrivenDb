@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DrivenDb\Collections\DbCache.cs" Link="Collections\DbCache.cs" />
+    <Compile Include="..\DrivenDb\Collections\DbCollectionExtensions.cs" Link="Collections\DbCollectionExtensions.cs" />
+    <Compile Include="..\DrivenDb\Collections\DbIndex.cs" Link="Collections\DbIndex.cs" />
+    <Compile Include="..\DrivenDb\Collections\DbIndexChangeEventArgs.cs" Link="Collections\DbIndexChangeEventArgs.cs" />
+    <Compile Include="..\DrivenDb\Collections\DbIndexCore.cs" Link="Collections\DbIndexCore.cs" />
+    <Compile Include="..\DrivenDb\Collections\DbView.cs" Link="Collections\DbView.cs" />
+    <Compile Include="..\DrivenDb\Collections\EntityComparer.cs" Link="Collections\EntityComparer.cs" />
+    <Compile Include="..\DrivenDb\Collections\IndexAdditionMethod.cs" Link="Collections\IndexAdditionMethod.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\IDbCache.cs" Link="Collections\Interfaces\IDbCache.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\IDbCacheCore.cs" Link="Collections\Interfaces\IDbCacheCore.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\IDbIndex.cs" Link="Collections\Interfaces\IDbIndex.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\IDbIndexCore.cs" Link="Collections\Interfaces\IDbIndexCore.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\IDbView.cs" Link="Collections\Interfaces\IDbView.cs" />
+    <Compile Include="..\DrivenDb\Collections\Interfaces\INotifyingDbView.cs" Link="Collections\Interfaces\INotifyingDbView.cs" />
+    <Compile Include="..\DrivenDb\DbFactory.cs" Link="DbFactory.cs" />
+    <Compile Include="..\DrivenDb\Language\AccessorExtensions.cs" Link="Language\AccessorExtensions.cs" />
+    <Compile Include="..\DrivenDb\Language\Attributes\DbColumnAttribute.cs" Link="Language\Attributes\DbColumnAttribute.cs" />
+    <Compile Include="..\DrivenDb\Language\Attributes\DbForeignAttribute.cs" Link="Language\Attributes\DbForeignAttribute.cs" />
+    <Compile Include="..\DrivenDb\Language\Attributes\DbPrimaryAttribute.cs" Link="Language\Attributes\DbPrimaryAttribute.cs" />
+    <Compile Include="..\DrivenDb\Language\Attributes\DbSequenceAttribute.cs" Link="Language\Attributes\DbSequenceAttribute.cs" />
+    <Compile Include="..\DrivenDb\Language\Attributes\DbTableAttribute.cs" Link="Language\Attributes\DbTableAttribute.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\DbAccessor.cs" Link="Language\Base\DbAccessor.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\DbAggregator.cs" Link="Language\Base\DbAggregator.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\DbMapper.cs" Link="Language\Base\DbMapper.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\DbScope.cs" Link="Language\Base\DbScope.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\DbScripter.cs" Link="Language\Base\DbScripter.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\EntityJoiner.cs" Link="Language\Base\EntityJoiner.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\FallbackAccessorSlim.cs" Link="Language\Base\FallbackAccessorSlim.cs" />
+    <Compile Include="..\DrivenDb\Language\Base\SqlBuilder.cs" Link="Language\Base\SqlBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\Db.cs" Link="Language\Db.cs" />
+    <Compile Include="..\DrivenDb\Language\DbAccessorType.cs" Link="Language\DbAccessorType.cs" />
+    <Compile Include="..\DrivenDb\Language\DbChange.cs" Link="Language\DbChange.cs" />
+    <Compile Include="..\DrivenDb\Language\DbChangeEventArgs.cs" Link="Language\DbChangeEventArgs.cs" />
+    <Compile Include="..\DrivenDb\Language\DbChangeType.cs" Link="Language\DbChangeType.cs" />
+    <Compile Include="..\DrivenDb\Language\DbEntity.cs" Link="Language\DbEntity.cs" />
+    <Compile Include="..\DrivenDb\Language\DbRecord.cs" Link="Language\DbRecord.cs" />
+    <Compile Include="..\DrivenDb\Language\DbSet.cs" Link="Language\DbSet.cs" />
+    <Compile Include="..\DrivenDb\Language\EntityState.cs" Link="Language\EntityState.cs" />
+    <Compile Include="..\DrivenDb\Language\Exceptions\InactiveExtensionException.cs" Link="Language\Exceptions\InactiveExtensionException.cs" />
+    <Compile Include="..\DrivenDb\Language\Exceptions\InvalidAggregateStructure.cs" Link="Language\Exceptions\InvalidAggregateStructure.cs" />
+    <Compile Include="..\DrivenDb\Language\Exceptions\MissingResultException.cs" Link="Language\Exceptions\MissingResultException.cs" />
+    <Compile Include="..\DrivenDb\Language\Extensions.cs" Link="Language\Extensions.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDb.cs" Link="Language\Interfaces\IDb.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbAccessor.cs" Link="Language\Interfaces\IDbAccessor.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbAccessorSlim.cs" Link="Language\Interfaces\IDbAccessorSlim.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbAggregate.cs" Link="Language\Interfaces\IDbAggregate.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbAggregator.cs" Link="Language\Interfaces\IDbAggregator.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbEntity.cs" Link="Language\Interfaces\IDbEntity.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbMapper.cs" Link="Language\Interfaces\IDbMapper.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbMonitor.cs" Link="Language\Interfaces\IDbMonitor.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbRecord.cs" Link="Language\Interfaces\IDbRecord.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbScope.cs" Link="Language\Interfaces\IDbScope.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IDbScripter.cs" Link="Language\Interfaces\IDbScripter.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IEqualsJoinable.cs" Link="Language\Interfaces\IEqualsJoinable.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IFallbackAccessorSlim.cs" Link="Language\Interfaces\IFallbackAccessorSlim.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IOnJoiner.cs" Link="Language\Interfaces\IOnJoiner.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IParallelAccessor.cs" Link="Language\Interfaces\IParallelAccessor.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IParallelAccessorSlim.cs" Link="Language\Interfaces\IParallelAccessorSlim.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IParamConvertible.cs" Link="Language\Interfaces\IParamConvertible.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\ISqlBuilder.cs" Link="Language\Interfaces\ISqlBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\Interfaces\IWhereJoinable.cs" Link="Language\Interfaces\IWhereJoinable.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\Interfaces\IMsSqlAccessor.cs" Link="Language\MsSql\Interfaces\IMsSqlAccessor.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\Interfaces\IMsSqlBuilder.cs" Link="Language\MsSql\Interfaces\IMsSqlBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\Interfaces\IMsSqlScope.cs" Link="Language\MsSql\Interfaces\IMsSqlScope.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\Interfaces\IMsSqlScripter.cs" Link="Language\MsSql\Interfaces\IMsSqlScripter.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\MsSqlAccessor.cs" Link="Language\MsSql\MsSqlAccessor.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\MsSqlBuilder.cs" Link="Language\MsSql\MsSqlBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\MsSqlScope.cs" Link="Language\MsSql\MsSqlScope.cs" />
+    <Compile Include="..\DrivenDb\Language\MsSql\MsSqlScripter.cs" Link="Language\MsSql\MsSqlScripter.cs" />
+    <Compile Include="..\DrivenDb\Language\MySql\MySqlBuilder.cs" Link="Language\MySql\MySqlBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\Oracle\OracleBuilder.cs" Link="Language\Oracle\OracleBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\SqLite\SqLiteBuilder.cs" Link="Language\SqLite\SqLiteBuilder.cs" />
+    <Compile Include="..\DrivenDb\Language\Wrappers\DbWrapper.cs" Link="Language\Wrappers\DbWrapper.cs" />
+    <Compile Include="..\DrivenDb\Utility\DataHolder.cs" Link="Utility\DataHolder.cs" />
+    <Compile Include="..\DrivenDb\Utility\DataRecord.cs" Link="Utility\DataRecord.cs" />
+    <Compile Include="..\DrivenDb\Utility\DisposableCollection.cs" Link="Utility\DisposableCollection.cs" />
+    <Compile Include="..\DrivenDb\Utility\EntityAccessor.cs" Link="Utility\EntityAccessor.cs" />
+    <Compile Include="..\DrivenDb\Utility\EntityHelper.cs" Link="Utility\EntityHelper.cs" />
+    <Compile Include="..\DrivenDb\Utility\Interfaces\IEntityAccessor.cs" Link="Utility\Interfaces\IEntityAccessor.cs" />
+    <Compile Include="..\DrivenDb\Utility\Weak.cs" Link="Utility\Weak.cs" />
+    <Compile Include="..\DrivenDb\Utility\WeakEqualityComparer.cs" Link="Utility\WeakEqualityComparer.cs" />
+    <Compile Include="..\DrivenDb\Utility\WeakEventManager.cs" Link="Utility\WeakEventManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Collections\Interfaces\" />
+    <Folder Include="Language\Attributes\" />
+    <Folder Include="Language\Base\" />
+    <Folder Include="Language\Exceptions\" />
+    <Folder Include="Language\Interfaces\" />
+    <Folder Include="Language\MsSql\Interfaces\" />
+    <Folder Include="Language\MySql\" />
+    <Folder Include="Language\Wrappers\" />
+    <Folder Include="Language\SqLite\" />
+    <Folder Include="Language\Oracle\" />
+    <Folder Include="Utility\Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.4.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

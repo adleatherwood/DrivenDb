@@ -14,7 +14,9 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
+#if !NETSTANDARD2_0
 using System.Data.Linq.Mapping;
+#endif
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -27,7 +29,7 @@ namespace DrivenDb.Base
 {
    internal class DbMapper : IDbMapper
    {      
-      #region --- STATIC --------------------------------------------------------------------------
+#region --- STATIC --------------------------------------------------------------------------
 
       private static readonly Dictionary<RuntimeTypeHandle, MethodInfo> m_Methods;
       private static readonly MethodInfo m_IsDbNull = typeof (IDataRecord).GetMethod("IsDBNull");
@@ -68,8 +70,8 @@ namespace DrivenDb.Base
          m_Methods[typeof (TimeSpan?).TypeHandle] = typeof (IDataRecord).GetMethod("GetDateTime");
       }
 
-      #endregion
-      #region --- PRIVATE -------------------------------------------------------------------------
+#endregion
+#region --- PRIVATE -------------------------------------------------------------------------
 
       private readonly ConcurrentDictionary<Identity, CacheInfo> m_Cache = new ConcurrentDictionary<Identity, CacheInfo>();
       private readonly ConcurrentDictionary<Type, AnonActivator> m_Activators = new ConcurrentDictionary<Type, AnonActivator>();
@@ -80,8 +82,8 @@ namespace DrivenDb.Base
          m_Db = db;
       }
 
-      #endregion
-      #region --- PUBLIC --------------------------------------------------------------------------
+#endregion
+#region --- PUBLIC --------------------------------------------------------------------------
 
       public T MapValue<T>(IDataReader reader)
       {
@@ -258,9 +260,9 @@ namespace DrivenDb.Base
          return result;
       }
 
-      #endregion
+#endregion
 
-      #region --- PRIVATE -------------------------------------------------------------------------
+#region --- PRIVATE -------------------------------------------------------------------------
 
       public Action<IDataRecord, T> GetDeserializer<T>(string query, IDataRecord reader)
       {
@@ -420,6 +422,7 @@ namespace DrivenDb.Base
                .Cast<DbColumnAttribute>()
                .SingleOrDefault();
 
+#if !NETSTANDARD2_0
             if (attribute == null)
             {
                attribute = field.GetCustomAttributes(typeof(ColumnAttribute), true)
@@ -427,6 +430,7 @@ namespace DrivenDb.Base
                   .Select(c => new DbColumnAttribute() { IsDbGenerated = c.IsDbGenerated, IsPrimaryKey = c.IsPrimaryKey, Name = c.Name ?? field.Name })
                   .SingleOrDefault();
             }
+#endif
 
             if (attribute != null)
             {
@@ -457,6 +461,7 @@ namespace DrivenDb.Base
                .Cast<DbColumnAttribute>()
                .SingleOrDefault();
 
+#if !NETSTANDARD2_0
             if (attribute == null)
             {
                attribute = property.GetCustomAttributes(typeof (ColumnAttribute), true)
@@ -464,6 +469,7 @@ namespace DrivenDb.Base
                   .Select(c => new DbColumnAttribute() { IsDbGenerated = c.IsDbGenerated, IsPrimaryKey = c.IsPrimaryKey, Name = c.Name})
                   .SingleOrDefault();
             }
+#endif
 
             if (attribute != null)
             {
@@ -478,9 +484,9 @@ namespace DrivenDb.Base
          return properties;
       }
 
-      #endregion
+#endregion
 
-      #region --- NESTED --------------------------------------------------------------------------
+#region --- NESTED --------------------------------------------------------------------------
 
       private class CacheInfo
       {
@@ -559,6 +565,6 @@ namespace DrivenDb.Base
          }
       }
 
-      #endregion
+#endregion
    }
 }
