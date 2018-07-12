@@ -33,7 +33,7 @@ build:develop:
      run-tests
  artifacts:
    paths:
-     - ./src/FunctionalLink/bin/Debug/netstandard2.0/*.*
+     - ./src/DrivenDb.Standard/bin/Debug/netstandard2.0/*.*
 
 release:master:
   stage: release
