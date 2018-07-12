@@ -1,0 +1,14 @@
+variables: 
+- name  : Version
+  find  : '[\d\.]+'
+  group : 0  
+tasks: 
+- variable : Version
+  filemask : DrivenDb.Standard\.csproj$
+  find     : (<[vV]ersion>)([\d\.]+)(<\/[vV]ersion>)
+  replace  : ${1}%s${3}
+- variable : Version
+  filemask : AssemblyInfo\.cs
+  find     : ([vV]ersion\(")([\d\.]+)("\))
+  replace  : ${1}%s${3}
+

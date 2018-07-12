@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DrivenDb.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Anthony Leatherwood</Authors>
+    <Company>adleatherwood</Company>
+    <Product>DrivenDb.Stanadard</Product>
+    <Version>1.0.0.0</Version>
+    <PackageLicenseUrl>https://gitlab.com/adleatherwood/DrivenDb/blob/develop/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://gitlab.com/adleatherwood/DrivenDb</PackageProjectUrl>
+    <PackageIconUrl>https://gitlab.com/adleatherwood/DrivenDb/blob/develop/icon.ico</PackageIconUrl>
+    <RepositoryUrl>https://gitlab.com/adleatherwood/DrivenDb/tree/master</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>microorm db database orm sql mysql sqlite mapping petapoco dapper entity</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
+
+</Project>
